@@ -71,5 +71,28 @@ namespace Biblioteca
 
             Console.WriteLine("Livro devolvido com sucesso.");
         }
+
+        public void ListarEmprestimos()
+        {
+            if (emprestimos.Count == 0)
+            {
+                Console.WriteLine("Nenhum empréstimo encontrado.");
+                return;
+            }
+
+            foreach (var emprestimo in emprestimos)
+            {
+                Console.WriteLine($"ID do Empréstimo: {emprestimo.Id}");
+                Console.WriteLine($"Cliente: {emprestimo.ClienteEmprestimo.Nome}");
+                Console.WriteLine($"Livro: {emprestimo.LivroEmprestado.Titulo}");
+                Console.WriteLine($"Data do Empréstimo: {emprestimo.DataDoEmprestimo.ToShortDateString()}");
+                Console.WriteLine($"Data de Devolução Prevista: {emprestimo.DataDevolucaoPrevista.ToShortDateString()}");
+                if (emprestimo.DataDevolucao.HasValue)
+                {
+                    Console.WriteLine($"Data de Devolução: {emprestimo.DataDevolucao.Value.ToShortDateString()}");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

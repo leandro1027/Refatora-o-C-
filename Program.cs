@@ -1,4 +1,6 @@
-﻿namespace Biblioteca
+﻿using System;
+
+namespace Biblioteca
 {
     class Program
     {
@@ -8,7 +10,35 @@
 
             AdicionarClientes(biblioteca);
             AdicionarLivros(biblioteca);
-            EmprestarEDevolverLivros(biblioteca);
+
+            while (true)
+            {
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1. Emprestar Livro");
+                Console.WriteLine("2. Devolver Livro");
+                Console.WriteLine("3. Listar Empréstimos");
+                Console.WriteLine("4. Sair");
+                Console.Write("Escolha uma opção: ");
+                var escolha = Console.ReadLine();
+
+                switch (escolha)
+                {
+                    case "1":
+                        EmprestarLivro(biblioteca);
+                        break;
+                    case "2":
+                        DevolverLivro(biblioteca);
+                        break;
+                    case "3":
+                        ListarEmprestimos(biblioteca);
+                        break;
+                    case "4":
+                        return;
+                    default:
+                        Console.WriteLine("Opção inválida. Tente novamente.");
+                        break;
+                }
+            }
         }
 
         static void AdicionarClientes(Biblioteca biblioteca)
@@ -31,14 +61,58 @@
                 Autor = "Machado de Assis",
                 Disponivel = true
             });
+
+            biblioteca.AdicionarLivro(new Livro
+            {
+                Id = 2,
+                Titulo = "Memórias Póstumas de Brás Cubas",
+                Autor = "Machado de Assis",
+                Disponivel = true
+            });
         }
 
-        static void EmprestarEDevolverLivros(Biblioteca biblioteca)
+        static void EmprestarLivro(Biblioteca biblioteca)
         {
-            biblioteca.EmprestarLivro(1, 1);
-            biblioteca.DevolverLivro(1, 1);
-            biblioteca.EmprestarLivro(1, 2);
+            Console.Write("Digite o ID do Cliente: ");
+            if (!int.TryParse(Console.ReadLine(), out int idCliente))
+            {
+                Console.WriteLine("ID de Cliente inválido.");
+                return;
+            }
+
+            Console.Write("Digite o ID do Livro: ");
+            if (!int.TryParse(Console.ReadLine(), out int idLivro))
+            {
+                Console.WriteLine("ID de Livro inválido.");
+                return;
+            }
+
+            biblioteca.EmprestarLivro(idCliente, idLivro);
+        }
+
+        static void DevolverLivro(Biblioteca biblioteca)
+        {
+            Console.Write("Digite o ID do Cliente: ");
+            if (!int.TryParse(Console.ReadLine(), out int idCliente))
+            {
+                Console.WriteLine("ID de Cliente inválido.");
+                return;
+            }
+
+            Console.Write("Digite o ID do Livro: ");
+            if (!int.TryParse(Console.ReadLine(), out int idLivro))
+            {
+                Console.WriteLine("ID de Livro inválido.");
+                return;
+            }
+
+            biblioteca.DevolverLivro(idCliente, idLivro);
+        }
+
+        static void ListarEmprestimos(Biblioteca biblioteca)
+        {
+            biblioteca.ListarEmprestimos();
         }
     }
 }
-
+ 
