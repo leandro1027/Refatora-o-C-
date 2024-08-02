@@ -4,44 +4,41 @@
     {
         static void Main(string[] args)
         {
-            Biblioteca biblioteca = IniciarBiblioteca();
+            var biblioteca = new Biblioteca();
 
-            TestarOperacoes(biblioteca);
+            AdicionarClientes(biblioteca);
+            AdicionarLivros(biblioteca);
+            EmprestarEDevolverLivros(biblioteca);
         }
 
-        static Biblioteca IniciarBiblioteca()
+        static void AdicionarClientes(Biblioteca biblioteca)
         {
-            Biblioteca biblioteca = new Biblioteca();
-
-            // Adicionar clientes
-            biblioteca.clientes.Add(new Cliente
+            biblioteca.AdicionarCliente(new Cliente
             {
                 Id = 1,
                 Nome = "Jorge e Mateus",
-                DataNascimento = new DateTime(1980, 1, 1),
+                DataNascimento = new DateTime(1980, 01, 01),
                 Telefone = "62999999"
             });
+        }
 
-            // Adicionar livros
-            biblioteca.livros.Add(new Livro
+        static void AdicionarLivros(Biblioteca biblioteca)
+        {
+            biblioteca.AdicionarLivro(new Livro
             {
                 Id = 1,
                 Titulo = "Dom Casmurro",
                 Autor = "Machado de Assis",
                 Disponivel = true
             });
-
-            return biblioteca;
         }
 
-        static void TestarOperacoes(Biblioteca biblioteca)
+        static void EmprestarEDevolverLivros(Biblioteca biblioteca)
         {
-            // Emprestar e devolver livro
             biblioteca.EmprestarLivro(1, 1);
             biblioteca.DevolverLivro(1, 1);
-            biblioteca.EmprestarLivro(1, 2); // Note que o cliente e o livro devem existir para isso funcionar
-
-            // Adicionar mais testes e operações conforme necessário
+            biblioteca.EmprestarLivro(1, 2);
         }
     }
 }
+

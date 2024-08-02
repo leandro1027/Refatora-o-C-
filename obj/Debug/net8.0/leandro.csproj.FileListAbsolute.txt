@@ -1,0 +1,15 @@
+/home/aluno/webner/Refatora-o-C-/bin/Debug/net8.0/leandro
+/home/aluno/webner/Refatora-o-C-/bin/Debug/net8.0/leandro.deps.json
+/home/aluno/webner/Refatora-o-C-/bin/Debug/net8.0/leandro.runtimeconfig.json
+/home/aluno/webner/Refatora-o-C-/bin/Debug/net8.0/leandro.dll
+/home/aluno/webner/Refatora-o-C-/bin/Debug/net8.0/leandro.pdb
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.GeneratedMSBuildEditorConfig.editorconfig
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.AssemblyInfoInputs.cache
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.AssemblyInfo.cs
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.csproj.CoreCompileInputs.cache
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.sourcelink.json
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.dll
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/refint/leandro.dll
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.pdb
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/leandro.genruntimeconfig.cache
+/home/aluno/webner/Refatora-o-C-/obj/Debug/net8.0/ref/leandro.dll
