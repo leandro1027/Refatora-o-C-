@@ -74,7 +74,7 @@ namespace Biblioteca
         static void EmprestarLivro(Biblioteca biblioteca)
         {
             Console.Write("Digite o ID do Cliente: ");
-            if (!int.TryParse(Console.ReadLine(), out int idCliente))
+            if (!int.TryParse(Console.ReadLine(), out int idCliente)) //converter para int, armazena em id
             {
                 Console.WriteLine("ID de Cliente inválido.");
                 return;
