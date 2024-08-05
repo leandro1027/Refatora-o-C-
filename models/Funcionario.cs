@@ -9,5 +9,3 @@ namespace Biblioteca
         public DateTime DataAdmissao { get; set; }
     }
 }
-
-
