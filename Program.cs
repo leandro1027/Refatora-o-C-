@@ -6,7 +6,7 @@ namespace Biblioteca
     {
         static void Main(string[] args)
         {
-            var biblioteca = new Biblioteca();
+            IBiblioteca biblioteca = new Biblioteca();
 
             AdicionarClientes(biblioteca);
             AdicionarLivros(biblioteca);
@@ -41,7 +41,7 @@ namespace Biblioteca
             }
         }
 
-        static void AdicionarClientes(Biblioteca biblioteca)
+        static void AdicionarClientes(IBiblioteca biblioteca)
         {
             biblioteca.AdicionarCliente(new Cliente
             {
@@ -52,7 +52,7 @@ namespace Biblioteca
             });
         }
 
-        static void AdicionarLivros(Biblioteca biblioteca)
+        static void AdicionarLivros(IBiblioteca biblioteca)
         {
             biblioteca.AdicionarLivro(new Livro
             {
@@ -71,10 +71,10 @@ namespace Biblioteca
             });
         }
 
-        static void EmprestarLivro(Biblioteca biblioteca)
+        static void EmprestarLivro(IBiblioteca biblioteca)
         {
             Console.Write("Digite o ID do Cliente: ");
-            if (!int.TryParse(Console.ReadLine(), out int idCliente)) //converter para int, armazena em id
+            if (!int.TryParse(Console.ReadLine(), out int idCliente))
             {
                 Console.WriteLine("ID de Cliente inválido.");
                 return;
@@ -90,7 +90,7 @@ namespace Biblioteca
             biblioteca.EmprestarLivro(idCliente, idLivro);
         }
 
-        static void DevolverLivro(Biblioteca biblioteca)
+        static void DevolverLivro(IBiblioteca biblioteca)
         {
             Console.Write("Digite o ID do Cliente: ");
             if (!int.TryParse(Console.ReadLine(), out int idCliente))
@@ -109,10 +109,9 @@ namespace Biblioteca
             biblioteca.DevolverLivro(idCliente, idLivro);
         }
 
-        static void ListarEmprestimos(Biblioteca biblioteca)
+        static void ListarEmprestimos(IBiblioteca biblioteca)
         {
             biblioteca.ListarEmprestimos();
         }
     }
 }
- 

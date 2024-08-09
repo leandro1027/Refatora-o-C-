@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Biblioteca
 {
-    public class Biblioteca
+    public class Biblioteca : IBiblioteca
     {
         private List<Cliente> clientes = new List<Cliente>();
         private List<Livro> livros = new List<Livro>();
